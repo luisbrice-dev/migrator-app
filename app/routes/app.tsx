@@ -22,6 +22,8 @@ export default function App() {
         <a href="/app" rel="home">
           Blog Migrator
         </a>
+        <a href="/app/customers">Customer Migrator</a>
+        <a href="/app/products">Product Migrator</a>
       </NavMenu>
       <Outlet />
     </AppProvider>

@@ -148,7 +148,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
         if (!response.ok) {
           const errorText = await response.text();
-          let errorMsg = `Error de BigCommerce API (${response.status})`;
+          let errorMsg = `BigCommerce API error (${response.status})`;
           try {
             const errorJson = JSON.parse(errorText);
             errorMsg = errorJson.title || errorJson.message || errorMsg;
@@ -381,7 +381,7 @@ export default function BlogMigrator() {
               <s-text-field
                 label="Store Hash"
                 name="storeHash"
-                placeholder="ej: abc123xyz"
+                placeholder="for example: abc123xyz"
                 details="Panel -> Advanced Settings -> API Accounts"
                 required
               />
@@ -554,7 +554,7 @@ export default function BlogMigrator() {
                 label="Shopify blog name"
                 name="blogTitle"
                 value={blogTitle}
-                placeholder="ej: News, Blog, Noticias"
+                placeholder="for example: News"
                 onChange={(e) => setBlogTitle(e.currentTarget.value)}
               />
 
@@ -569,7 +569,7 @@ export default function BlogMigrator() {
                 type="submit"
                 {...(isExporting ? { loading: true } : {})}
               >
-                📥 Descargar CSV ({displayPosts.length} posts)
+                Download CSV ({displayPosts.length} posts)
               </s-button>
             </s-stack>
           </exportFetcher.Form>
